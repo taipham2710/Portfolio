@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Hệ thống DevOps IoT 3 tầng',
+      title: 'DevOps cho tái cấu hình IoT',
       description: 'Triển khai tự động hóa build, cập nhật và giám sát cho thiết bị IoT (ESP32, Raspberry Pi) với pipeline CI/CD, container hóa, và giám sát real-time.',
       image: '/Portfolio/devops-iot.jpg',
       technologies: ['Docker', 'EMQX', 'Prometheus', 'Grafana', 'Ansible'],
@@ -15,7 +15,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Hệ thống Live Streaming nội bộ với OpenNebula',
+      title: 'Triển khai hạ tầng ảo hoá và dịch vụ streaming với OpenNebula',
       description: 'Triển khai môi trường ảo hóa và phân phối luồng media RTMP đa node trong mạng nội bộ, đảm bảo hiệu suất và khả năng mở rộng.',
       image: '/Portfolio/opennebula.jpg',
       technologies: ['OpenNebula', 'RTMP', 'Ansible', 'Ubuntu'],
