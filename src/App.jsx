@@ -39,7 +39,7 @@ function App() {
       case 'about':
         return <About />
       case 'projects':
-        return <Projects />
+        return <Projects onContactCtaClick={() => setCurrentTab('contact')} />
       case 'certificates':
         return <Certificates />
       case 'contact':

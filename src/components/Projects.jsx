@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaGithub, FaExternalLinkAlt, FaEye } from 'react-icons/fa'
 import ProjectModal from './ProjectModal'
 
-const Projects = () => {
+const Projects = ({ onContactCtaClick }) => {
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -85,7 +85,7 @@ const Projects = () => {
       <div className="projects-cta">
         <h2>Bạn có dự án muốn thực hiện?</h2>
         <p>Hãy liên hệ với tôi để thảo luận về ý tưởng của bạn</p>
-        <button className="btn btn-primary">Liên hệ ngay</button>
+        <button className="btn btn-primary" onClick={onContactCtaClick}>Liên hệ ngay</button>
       </div>
 
       {/* Project Modal */}
