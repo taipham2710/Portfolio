@@ -1457,6 +1457,663 @@ body {
   justify-content: center;
 }
 
+/* Project Modal Styles */
+.project-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Reset button styles in modal to prevent inheritance issues */
+.project-modal button {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Override any global button styles that might affect modal close */
+.project-modal .modal-close {
+  all: unset !important;
+  background: var(--bg-tertiary) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  color: var(--text-primary) !important;
+  font-size: 1.25rem !important;
+  font-weight: normal !important;
+  text-decoration: none !important;
+}
+
+/* Custom scrollbar for modal */
+.project-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-modal::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.project-modal::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.project-modal::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+.project-modal {
+  background: var(--bg-primary);
+  border-radius: 20px;
+  max-width: 70vw;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  margin: 2rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  z-index: 20;
+}
+
+.modal-header h2 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: var(--bg-tertiary) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  color: var(--text-primary) !important;
+  font-size: 1.25rem !important;
+}
+
+.modal-close:hover {
+  background: var(--primary-color) !important;
+  color: white !important;
+  transform: scale(1.1) !important;
+}
+
+/* Ensure close button icon displays correctly */
+.modal-close svg {
+  width: 20px !important;
+  height: 20px !important;
+  display: block !important;
+  color: inherit !important;
+  fill: currentColor !important;
+}
+
+.modal-content {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-image-section {
+  position: relative;
+  margin-bottom: 2rem;
+  z-index: 5;
+}
+
+.project-modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.project-badges {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* Ensure badges are properly layered */
+.project-badges .featured-badge {
+  z-index: 31;
+  order: 1;
+  position: relative;
+}
+
+.project-badges .tech-count {
+  z-index: 32;
+  order: 2;
+  position: relative;
+}
+
+/* Ensure badges are visible and not clipped */
+.project-badges .featured-badge,
+.project-badges .tech-count {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.featured-badge {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 31;
+  order: 1;
+}
+
+.tech-count {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 32;
+  order: 2;
+}
+
+.project-description-section h3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-description-section p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-technologies-section h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.tech-icon {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.tech-item span {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Project Details */
+.project-details {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-overview h3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-overview p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.overview-features {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.overview-features li {
+  margin-bottom: 0.75rem;
+}
+
+.overview-features strong {
+  color: var(--primary-color);
+}
+
+.repos-section h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.repo-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.repo-item.main-repo {
+  border-color: var(--primary-color);
+  border-width: 2px;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.repo-icon {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.repo-header h5 {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.repo-type {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.repo-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.repo-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.repo-link:hover {
+  color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.repo-link.disabled {
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.repo-link.disabled:hover {
+  color: var(--text-secondary);
+  transform: none;
+}
+
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.repo-item.sub-repo {
+  border-color: var(--border-color);
+}
+
+/* Architecture Diagram */
+.project-architecture h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.architecture-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.arch-layer {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.arch-layer.cloud-layer {
+  border-color: var(--accent-color);
+  border-width: 2px;
+}
+
+.arch-layer.edge-layer {
+  border-color: var(--primary-color);
+  border-width: 2px;
+}
+
+.arch-layer.device-layer {
+  border-color: var(--secondary-color);
+  border-width: 2px;
+}
+
+.arch-layer h5 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.arch-layer p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Project Features */
+.project-features h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.project-features ul {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 1.5rem;
+}
+
+.project-features li {
+  margin-bottom: 0.5rem;
+}
+
+/* Streaming Workflow */
+.streaming-workflow h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.workflow-step {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.workflow-step h5 {
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.workflow-step p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.workflow-step code {
+  background: var(--bg-tertiary);
+  color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+/* Deployment Configuration */
+.deployment-config h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.config-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.config-section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.config-section h5 {
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.config-section ul {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 1.5rem;
+}
+
+.config-section li {
+  margin-bottom: 0.5rem;
+}
+
+.config-section strong {
+  color: var(--text-primary);
+}
+
+/* Benefits Section */
+.benefits-section h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.benefit-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.benefit-item h5 {
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Research Objectives */
+.research-objectives h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.objectives-list {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.objectives-list li {
+  margin-bottom: 0.75rem;
+}
+
+.objectives-list strong {
+  color: var(--primary-color);
+}
+
+/* Tech Stack */
+.tech-stack h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.tech-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.tech-category {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.tech-category h5 {
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 1rem 2rem 2rem 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* View Details Button */
+.project-link.view-details {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-link.view-details:hover {
+  background: var(--primary-color);
+  transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .sidebar {
@@ -1480,6 +2137,56 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Project Modal Mobile */
+  .project-modal {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: 1rem;
+    border-radius: 16px;
+  }
+  
+  .repos-grid,
+  .tech-categories,
+  .workflow-steps,
+  .config-sections,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+  
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .project-modal-image {
+    height: 200px;
+  }
+  
+  .repos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
   /* Mobile Menu Button */
   .mobile-menu-btn {
     display: flex !important;
