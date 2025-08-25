@@ -3,18 +3,6 @@ import emailjs from '@emailjs/browser'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaPaperPlane } from 'react-icons/fa'
 
 const Contact = () => {
-  // Google Forms config (preferred for sharing without backend)
-  const GF_ACTION = import.meta.env.VITE_GOOGLE_FORM_ACTION
-  const GF_NAME_ID = import.meta.env.VITE_GF_NAME
-  const GF_EMAIL_ID = import.meta.env.VITE_GF_EMAIL
-  const GF_SUBJECT_ID = import.meta.env.VITE_GF_SUBJECT
-  const GF_MESSAGE_ID = import.meta.env.VITE_GF_MESSAGE
-  const useGoogleForm = Boolean(GF_ACTION && GF_NAME_ID && GF_EMAIL_ID && GF_MESSAGE_ID)
-
-  // Fallback: Formspree (optional)
-  const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID
-  const formEndpoint = FORMSPREE_ID ? `https://formspree.io/f/${FORMSPREE_ID}` : null
-
   // EmailJS config (send directly to your email)
   const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
   const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
@@ -44,70 +32,33 @@ const Contact = () => {
     setError('')
     setSuccess('')
 
-    if (useEmailJS) {
-      try {
-        setIsSubmitting(true)
-        const params = {
-          from_name: formData.name,
-          reply_to: formData.email,
-          subject: formData.subject,
-          message: formData.message
-        }
-        const res = await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          params,
-          EMAILJS_PUBLIC_KEY
-        )
-        if (res?.status === 200) {
-          setSuccess('Gửi thành công!')
-          setFormData({ name: '', email: '', subject: '', message: '' })
-        } else {
-          setError('Gửi thất bại, vui lòng thử lại sau.')
-        }
-      } catch (err) {
-        setError('Không thể gửi email. Vui lòng thử lại sau.')
-      } finally {
-        setIsSubmitting(false)
-      }
-      return
-    }
-
-    if (useGoogleForm) {
-      // Handled by native form POST to Google Forms via hidden iframe
-      return
-    }
-
-    if (!formEndpoint) {
-      setError('Form chưa được cấu hình. Vui lòng thiết lập Google Form (VITE_GOOGLE_FORM_ACTION, VITE_GF_NAME, VITE_GF_EMAIL, VITE_GF_MESSAGE) trong .env.local')
+    if (!useEmailJS) {
+      setError('Chưa cấu hình EmailJS. Vui lòng thêm VITE_EMAILJS_PUBLIC_KEY, VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID vào .env.local')
       return
     }
 
     try {
       setIsSubmitting(true)
-      const payload = new FormData()
-      payload.append('name', formData.name)
-      payload.append('email', formData.email)
-      payload.append('subject', formData.subject)
-      payload.append('message', formData.message)
-
-      const res = await fetch(formEndpoint, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json'
-        },
-        body: payload
-      })
-
-      const data = await res.json().catch(() => ({}))
-      if (res.ok) {
-        setSuccess('Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.')
+      const params = {
+        from_name: formData.name,
+        reply_to: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      }
+      const res = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        params,
+        EMAILJS_PUBLIC_KEY
+      )
+      if (res?.status === 200) {
+        setSuccess('Gửi thành công!')
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
-        setError(data?.error || 'Gửi thất bại, vui lòng thử lại sau.')
+        setError('Gửi thất bại, vui lòng thử lại sau.')
       }
     } catch (err) {
-      setError('Không thể kết nối máy chủ. Vui lòng thử lại sau.')
+      setError('Không thể gửi email. Vui lòng thử lại sau.')
     } finally {
       setIsSubmitting(false)
     }
@@ -223,117 +174,59 @@ const Contact = () => {
           {success && (
             <div className="form-alert" style={{color: '#16a34a', marginBottom: '1rem'}}>{success}</div>
           )}
-          {/* Hidden iframe prevents redirect when posting to Google Forms */}
-          {useGoogleForm && (
-            <iframe name="hidden_iframe" title="hidden_iframe" style={{ display: 'none' }}></iframe>
-          )}
           <form
             onSubmit={handleSubmit}
             className="contact-form"
-            {...(useGoogleForm
-              ? {
-                  action: GF_ACTION,
-                  method: 'POST',
-                  target: 'hidden_iframe'
-                }
-              : {})}
           >
             <div className="form-group">
               <label htmlFor="name">Họ và tên *</label>
-              {useGoogleForm ? (
-                <input
-                  type="text"
-                  id="name"
-                  name={GF_NAME_ID}
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Nhập họ và tên của bạn"
-                />
-              ) : (
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Nhập họ và tên của bạn"
-                />
-              )}
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Nhập họ và tên của bạn"
+              />
             </div>
 
             <div className="form-group">
               <label htmlFor="email">Email *</label>
-              {useGoogleForm ? (
-                <input
-                  type="email"
-                  id="email"
-                  name={GF_EMAIL_ID}
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Nhập email của bạn"
-                />
-              ) : (
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Nhập email của bạn"
-                />
-              )}
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Nhập email của bạn"
+              />
             </div>
 
             <div className="form-group">
               <label htmlFor="subject">Tiêu đề</label>
-              {useGoogleForm ? (
-                <input
-                  type="text"
-                  id="subject"
-                  name={GF_SUBJECT_ID || 'entry.subject'}
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Nhập tiêu đề tin nhắn"
-                />
-              ) : (
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Nhập tiêu đề tin nhắn"
-                />
-              )}
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Nhập tiêu đề tin nhắn"
+              />
             </div>
 
             <div className="form-group">
               <label htmlFor="message">Nội dung tin nhắn *</label>
-              {useGoogleForm ? (
-                <textarea
-                  id="message"
-                  name={GF_MESSAGE_ID}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  placeholder="Nhập nội dung tin nhắn của bạn"
-                ></textarea>
-              ) : (
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  placeholder="Nhập nội dung tin nhắn của bạn"
-                ></textarea>
-              )}
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows="5"
+                placeholder="Nhập nội dung tin nhắn của bạn"
+              ></textarea>
             </div>
 
             <button 
