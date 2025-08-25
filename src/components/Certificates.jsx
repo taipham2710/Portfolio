@@ -33,7 +33,14 @@ const Certificates = () => {
           </div>
           <div className="coming-soon-cta">
             <p>Bạn muốn xem portfolio dự án của tôi?</p>
-            <button className="btn btn-primary">Xem dự án</button>
+            <a
+              className="btn btn-primary"
+              href="https://github.com/taipham2710/Portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Xem dự án
+            </a>
           </div>
         </div>
       </div>

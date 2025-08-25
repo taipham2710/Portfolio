@@ -35,7 +35,7 @@ function App() {
   const renderContent = () => {
     switch (currentTab) {
       case 'home':
-        return <Home />
+        return <Home onViewProjectsClick={() => setCurrentTab('projects')} />
       case 'about':
         return <About />
       case 'projects':

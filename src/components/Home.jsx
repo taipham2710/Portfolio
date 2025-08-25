@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from 'react-icons/fa'
 
-const Home = () => {
+const Home = ({ onViewProjectsClick }) => {
   return (
     <div className="home">
       <div className="hero-section">
@@ -22,7 +22,7 @@ const Home = () => {
             </p>
             
             <div className="hero-buttons">
-              <button className="btn btn-primary">Xem dự án</button>
+              <button className="btn btn-primary" onClick={onViewProjectsClick}>Xem dự án</button>
               <button className="btn btn-secondary">Tải CV</button>
             </div>
           </div>
