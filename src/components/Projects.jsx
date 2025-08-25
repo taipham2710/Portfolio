@@ -1,14 +1,18 @@
-import React from 'react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import React, { useState } from 'react'
+import { FaGithub, FaExternalLinkAlt, FaEye } from 'react-icons/fa'
+import ProjectModal from './ProjectModal'
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const projects = [
     {
       id: 1,
       title: 'DevOps cho tái cấu hình IoT',
       description: 'Triển khai tự động hóa build, cập nhật và giám sát cho thiết bị IoT (ESP32, Raspberry Pi) với pipeline CI/CD, container hóa, và giám sát real-time.',
       image: '/Portfolio/devops-iot.jpg',
-      technologies: ['Docker', 'EMQX', 'Prometheus', 'Grafana', 'Ansible'],
+      technologies: ['Git', 'Github', 'Github Actions', 'K3s', 'Docker', 'Loki', 'EMQX', 'Prometheus', 'Grafana', 'Ansible', 'NodeJs', 'React', 'FastAPI'],
       github: 'https://github.com/taipham2710/Agent-RasPi',
       live: null,
       featured: true
@@ -29,7 +33,6 @@ const Projects = () => {
     <div className="projects">
       <div className="projects-header">
         <h1 className="section-title">Dự án của tôi</h1>
-        <p className="section-subtitle">Một số dự án nổi bật tôi đã thực hiện</p>
       </div>
 
       <div className="projects-grid">
@@ -41,6 +44,16 @@ const Projects = () => {
               <img src={project.image} alt={project.title} />
               <div className="project-overlay">
                 <div className="project-links">
+                  <button 
+                    className="project-link view-details"
+                    onClick={() => {
+                      setSelectedProject(project)
+                      setIsModalOpen(true)
+                    }}
+                    title="Xem chi tiết"
+                  >
+                    <FaEye />
+                  </button>
                   {project.github && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
                       <FaGithub />
@@ -74,6 +87,16 @@ const Projects = () => {
         <p>Hãy liên hệ với tôi để thảo luận về ý tưởng của bạn</p>
         <button className="btn btn-primary">Liên hệ ngay</button>
       </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false)
+          setSelectedProject(null)
+        }}
+      />
     </div>
   )
 }
