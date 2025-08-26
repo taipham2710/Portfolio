@@ -1451,12 +1451,6 @@ body {
   margin-bottom: 2rem;
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
 /* Project Modal Styles */
 .project-modal-overlay {
   position: fixed;
@@ -2263,11 +2257,6 @@ body {
   
   .skills-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
   }
   
   /* Filter buttons mobile */

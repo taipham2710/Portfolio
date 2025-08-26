@@ -250,14 +250,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="contact-cta">
-        <h2>Bạn có dự án muốn thực hiện?</h2>
-        <p>Hãy để lại thông tin và tôi sẽ liên hệ lại trong vòng 24 giờ</p>
-        <div className="cta-buttons">
-          <button className="btn btn-primary">Xem portfolio</button>
-          <button className="btn btn-secondary">Tải CV</button>
-        </div>
-      </div>
+
     </div>
   )
 }
