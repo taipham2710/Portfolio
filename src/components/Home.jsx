@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from 'react-icons/fa'
 
 const Home = ({ onViewProjectsClick }) => {
+  const [showCVDropdown, setShowCVDropdown] = useState(false)
+
+  const cvOptions = [
+    {
+      name: 'CV Tiếng Việt',
+      filename: 'PhamTanTai-DevOps-Intern-VN.pdf',
+      url: '/Portfolio/PhamTanTai-DevOps-Intern-VN.pdf'
+    },
+    {
+      name: 'CV English',
+      filename: 'PhamTanTai-DevOps-Intern-ENG.pdf',
+      url: '/Portfolio/PhamTanTai-DevOps-Intern-ENG.pdf'
+    }
+  ]
+
+  const handleCVDownload = (cvUrl, filename) => {
+    const link = document.createElement('a')
+    link.href = cvUrl
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    setShowCVDropdown(false)
+  }
+
   return (
     <div className="home">
       <div className="hero-section">
@@ -23,7 +48,27 @@ const Home = ({ onViewProjectsClick }) => {
             
             <div className="hero-buttons">
               <button className="btn btn-primary" onClick={onViewProjectsClick}>Xem dự án</button>
-              <button className="btn btn-secondary">Tải CV</button>
+              <div className="cv-dropdown">
+                <button 
+                  className="btn btn-secondary"
+                  onClick={() => setShowCVDropdown(!showCVDropdown)}
+                >
+                  Tải CV
+                </button>
+                {showCVDropdown && (
+                  <div className="cv-dropdown-menu">
+                    {cvOptions.map((cv, index) => (
+                      <button
+                        key={index}
+                        className="cv-option"
+                        onClick={() => handleCVDownload(cv.url, cv.filename)}
+                      >
+                        {cv.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           

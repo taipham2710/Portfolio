@@ -2343,3 +2343,56 @@ body {
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+/* CV Dropdown Styles */
+.cv-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.cv-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  margin-top: 0.5rem;
+  min-width: 200px;
+  overflow: hidden;
+}
+
+.cv-option {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cv-option:last-child {
+  border-bottom: none;
+}
+
+.cv-option:hover {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+.cv-option:active {
+  background: var(--bg-tertiary);
+}
+
+/* Ensure dropdown appears above other elements */
+.hero-buttons {
+  position: relative;
+  z-index: 10;
+}
