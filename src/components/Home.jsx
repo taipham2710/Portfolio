@@ -76,7 +76,7 @@ const Home = ({ onViewProjectsClick }) => {
             <div className="profile-card">
               <div className="profile-avatar">
                 <img 
-                  src="/Portfolio/avatar.png" 
+                  src="/Portfolio/avatar.jpeg" 
                   alt="Phạm Tấn Tài - DevOps Engineer"
                   className="avatar"
                 />
