@@ -16,6 +16,17 @@ const Certificates = () => {
       category: 'devops',
       image: '/Portfolio/devops-prerequisite.png' // Hình ảnh chứng chỉ
     },
+    {
+      id: 'coursera-git-basics-devops',
+      title: 'Git Basics for DevOps',
+      issuer: 'KodeKloud (Coursera)',
+      date: '28/08/2025',
+      details: 'Hoàn thành khóa Git căn bản cho DevOps (~4 giờ): Git, GitHub, Version Control, Linux, công cụ cộng tác.',
+      url: 'https://coursera.org/share/1e9e0f215e1dca7477035e93abf3c560',
+      featured: false,
+      category: 'devops',
+      image: '/Portfolio/git-basic-for-devops.png'
+    },
   ]
 
   const categories = [
