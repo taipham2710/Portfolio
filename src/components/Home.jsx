@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from 'react-icons/fa'
 
 const Home = ({ onViewProjectsClick }) => {
   const [showCVDropdown, setShowCVDropdown] = useState(false)
+  const dropdownRef = useRef(null)
 
   const cvOptions = [
     {
@@ -27,6 +28,30 @@ const Home = ({ onViewProjectsClick }) => {
     setShowCVDropdown(false)
   }
 
+  // Close dropdown on outside click or Escape key
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showCVDropdown && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowCVDropdown(false)
+      }
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setShowCVDropdown(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside, { passive: true })
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [showCVDropdown])
+
   return (
     <div className="home">
       <div className="hero-section">
@@ -48,7 +73,7 @@ const Home = ({ onViewProjectsClick }) => {
             
             <div className="hero-buttons">
               <button className="btn btn-primary" onClick={onViewProjectsClick}>Xem dự án</button>
-              <div className="cv-dropdown">
+              <div className="cv-dropdown" ref={dropdownRef}>
                 <button 
                   className="btn btn-secondary"
                   onClick={() => setShowCVDropdown(!showCVDropdown)}
