@@ -29,7 +29,11 @@
     "p2": "Dù vẫn đang trên con đường học hỏi, tôi luôn chủ động tìm hiểu công nghệ mới, từ containerization, CI/CD cho đến cloud computing, với mục tiêu tạo ra các hệ thống ổn định, bảo mật và dễ mở rộng.",
     "coreValues": "Giá trị cốt lõi",
     "skills": "Kỹ năng & Công nghệ",
-    "highlightProjects": "Dự án tiêu biểu"
+    "highlightProjects": "Dự án tiêu biểu",
+    "timeline1Title": "Hệ thống DevOps cho IoT 3 tầng",
+    "timeline1Desc": "Tự động hóa build, cập nhật và giám sát cho ESP32 và Raspberry Pi, tích hợp container hóa và monitoring tập trung.",
+    "timeline2Title": "Hạ tầng ảo hóa cho livestream nội bộ",
+    "timeline2Desc": "Triển khai OpenNebula và RTMP streaming trên mạng nội bộ, kiểm thử khả năng phân phối tài nguyên và tính sẵn sàng cao."
   },
   "about.v1Title": "Tự động hóa",
   "about.v1Desc": "Giảm thiểu thao tác thủ công, tăng hiệu suất triển khai",
@@ -45,7 +49,11 @@
     "ctaDesc": "Hãy liên hệ với tôi để thảo luận về ý tưởng của bạn",
     "ctaBtn": "Liên hệ ngay",
     "featured": "Nổi bật",
-    "viewDetails": "Xem chi tiết"
+    "viewDetails": "Xem chi tiết",
+    "iotProjectTitle": "DevOps cho tái cấu hình IoT",
+    "iotProjectDesc": "Triển khai tự động hóa build, cập nhật và giám sát cho thiết bị IoT (ESP32, Raspberry Pi) với pipeline CI/CD, container hóa, và giám sát real-time.",
+    "openNebulaProjectTitle": "Triển khai hạ tầng ảo hoá và dịch vụ streaming với OpenNebula",
+    "openNebulaProjectDesc": "Triển khai môi trường ảo hóa và phân phối luồng media RTMP đa node trong mạng nội bộ, đảm bảo hiệu suất và khả năng mở rộng."
   },
   "certs": {
     "title": "Chứng chỉ & Thành tích",

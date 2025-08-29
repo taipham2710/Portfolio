@@ -11,8 +11,8 @@ const Projects = ({ onContactCtaClick }) => {
   const projects = [
     {
       id: 1,
-      title: 'DevOps cho tái cấu hình IoT',
-      description: 'Triển khai tự động hóa build, cập nhật và giám sát cho thiết bị IoT (ESP32, Raspberry Pi) với pipeline CI/CD, container hóa, và giám sát real-time.',
+      titleKey: 'projects.iotProjectTitle',
+      descriptionKey: 'projects.iotProjectDesc',
       image: '/Portfolio/devops-iot.jpg',
       technologies: ['Git', 'Github', 'Github Actions', 'K3s', 'Docker', 'Loki', 'EMQX', 'Prometheus', 'Grafana', 'Ansible', 'NodeJs', 'React', 'FastAPI'],
       github: 'https://github.com/taipham2710/Agent-RasPi',
@@ -21,8 +21,8 @@ const Projects = ({ onContactCtaClick }) => {
     },
     {
       id: 2,
-      title: 'Triển khai hạ tầng ảo hoá và dịch vụ streaming với OpenNebula',
-      description: 'Triển khai môi trường ảo hóa và phân phối luồng media RTMP đa node trong mạng nội bộ, đảm bảo hiệu suất và khả năng mở rộng.',
+      titleKey: 'projects.openNebulaProjectTitle',
+      descriptionKey: 'projects.openNebulaProjectDesc',
       image: '/Portfolio/opennebula.jpg',
       technologies: ['OpenNebula', 'RTMP', 'Ansible', 'Ubuntu'],
       github: 'https://github.com/taipham2710/one-deploy',
@@ -43,7 +43,7 @@ const Projects = ({ onContactCtaClick }) => {
             {project.featured && <div className="featured-badge">{t('projects.featured')}</div>}
             
             <div className="project-image">
-              <img src={project.image} alt={project.title} />
+              <img src={project.image} alt={t(project.titleKey)} />
               <div className="project-overlay">
                 <div className="project-links">
                   <button 
@@ -71,8 +71,8 @@ const Projects = ({ onContactCtaClick }) => {
             </div>
             
             <div className="project-content">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
+              <h3 className="project-title">{t(project.titleKey)}</h3>
+              <p className="project-description">{t(project.descriptionKey)}</p>
               
               <div className="project-technologies">
                 {project.technologies.map((tech, index) => (

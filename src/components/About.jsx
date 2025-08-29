@@ -74,17 +74,17 @@ const About = () => {
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Hệ thống DevOps cho IoT 3 tầng</h3>
+                <h3>{t('about.timeline1Title')}</h3>
                 <p className="period">17/2/2025 - 7/6/2025</p>
-                <p>Tự động hóa build, cập nhật và giám sát cho ESP32 và Raspberry Pi, tích hợp container hóa và monitoring tập trung.</p>
+                <p>{t('about.timeline1Desc')}</p>
               </div>
             </div>
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Hạ tầng ảo hóa cho livestream nội bộ</h3>
+                <h3>{t('about.timeline2Title')}</h3>
                 <p className="period">7/3/2025 - 26/5/2025</p>
-                <p>Triển khai OpenNebula và RTMP streaming trên mạng nội bộ, kiểm thử khả năng phân phối tài nguyên và tính sẵn sàng cao.</p>
+                <p>{t('about.timeline2Desc')}</p>
               </div>
             </div>
           </div>

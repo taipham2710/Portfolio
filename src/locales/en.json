@@ -29,7 +29,11 @@
     "p2": "While still on my learning path, I proactively explore new technologies from containerization and CI/CD to cloud computing, aiming to create systems that are stable, secure, and scalable.",
     "coreValues": "Core values",
     "skills": "Skills & Technologies",
-    "highlightProjects": "Highlighted projects"
+    "highlightProjects": "Highlighted projects",
+    "timeline1Title": "DevOps System for 3-layer IoT",
+    "timeline1Desc": "Automate build, update, and monitoring for ESP32 and Raspberry Pi, integrate containerization and centralized monitoring.",
+    "timeline2Title": "Virtualization Infrastructure for Internal Livestream",
+    "timeline2Desc": "Deploy OpenNebula and RTMP streaming on internal network, test resource distribution capability and high availability."
   },
   "about.v1Title": "Automation",
   "about.v1Desc": "Reduce manual operations, improve delivery efficiency",
@@ -45,7 +49,11 @@
     "ctaDesc": "Contact me to discuss your ideas",
     "ctaBtn": "Contact now",
     "featured": "Featured",
-    "viewDetails": "View details"
+    "viewDetails": "View details",
+    "iotProjectTitle": "DevOps for IoT Reconfiguration",
+    "iotProjectDesc": "Automated build, update, and monitoring for IoT devices (ESP32, Raspberry Pi) with CI/CD pipeline, containerization, and real-time monitoring.",
+    "openNebulaProjectTitle": "Virtualization Infrastructure and Streaming Service with OpenNebula",
+    "openNebulaProjectDesc": "Deploy a virtualized environment and multi-node RTMP media streaming within a local network, ensuring performance and scalability."
   },
   "certs": {
     "title": "Certificates & Achievements",
