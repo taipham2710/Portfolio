@@ -68,7 +68,9 @@
     "seeProjects": "Xem dự án",
     "statsTotal": "Chứng chỉ",
     "statsFeatured": "Chứng chỉ nổi bật",
-    "statsIssuers": "Tổ chức cấp"
+    "statsIssuers": "Tổ chức cấp",
+    "devopsPrereqDesc": "Hoàn thành khóa nền tảng DevOps (~14 giờ): Linux, CLI, TCP/IP, Networking, Systems Administration.",
+    "gitBasicsDesc": "Hoàn thành khóa Git căn bản cho DevOps (~4 giờ): Git, GitHub, Version Control, Linux, công cụ cộng tác."
   },
   "contact": {
     "title": "Liên hệ",

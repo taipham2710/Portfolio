@@ -68,7 +68,9 @@
     "seeProjects": "View projects",
     "statsTotal": "Certificates",
     "statsFeatured": "Featured certificates",
-    "statsIssuers": "Issuers"
+    "statsIssuers": "Issuers",
+    "devopsPrereqDesc": "Completed the foundational DevOps course (~14 hours): Linux, CLI, TCP/IP, Networking, Systems Administration.",
+    "gitBasicsDesc": "Completed the basic Git course for DevOps (~4 hours): Git, GitHub, Version Control, Linux, collaboration tools."
   },
   "contact": {
     "title": "Contact",

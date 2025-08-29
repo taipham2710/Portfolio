@@ -12,18 +12,18 @@ const Certificates = () => {
       title: 'DevOps Prerequisite Course',
       issuer: 'KodeKloud (Coursera)',
       date: '27/08/2025',
-      details: 'Hoàn thành khóa nền tảng DevOps (~14 giờ): Linux, CLI, TCP/IP, Networking, Systems Administration.',
+      descriptionKey: 'certs.devopsPrereqDesc',
       url: 'https://coursera.org/share/c29386851cbd2b2012e6b4a67788c7aa',
       featured: false,
       category: 'devops',
-      image: '/Portfolio/devops-prerequisite.png' // Hình ảnh chứng chỉ
+      image: '/Portfolio/devops-prerequisite.png'
     },
     {
       id: 'coursera-git-basics-devops',
       title: 'Git Basics for DevOps',
       issuer: 'KodeKloud (Coursera)',
       date: '28/08/2025',
-      details: 'Hoàn thành khóa Git căn bản cho DevOps (~4 giờ): Git, GitHub, Version Control, Linux, công cụ cộng tác.',
+      descriptionKey: 'certs.gitBasicsDesc',
       url: 'https://coursera.org/share/1e9e0f215e1dca7477035e93abf3c560',
       featured: false,
       category: 'devops',
@@ -102,7 +102,7 @@ const Certificates = () => {
                 </div>
                 <div className="certificate-issuer">{cert.issuer}</div>
                 <div className="certificate-date">{cert.date}</div>
-                <p className="certificate-description">{cert.details}</p>
+                <p className="certificate-description">{t(cert.descriptionKey)}</p>
                 <div className="certificate-footer">
                   <a
                     className="repo-link"
