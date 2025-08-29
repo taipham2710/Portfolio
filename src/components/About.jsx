@@ -1,7 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaCloud, FaCogs, FaDatabase, FaTools } from 'react-icons/fa'
 
 const About = () => {
+  const { t } = useTranslation()
   const skills = [
     { name: 'Automation & CI/CD', icon: FaCogs, items: ['GitHub Actions', 'Ansible', 'Jenkins', 'Terraform'] },
     { name: 'Container & Orchestration', icon: FaTools, items: ['Docker', 'K3s/Kubernetes', 'Docker Compose'] },
@@ -12,49 +14,43 @@ const About = () => {
   return (
     <div className="about">
       <div className="about-header">
-        <h1 className="section-title">Về tôi</h1>
-        <p className="section-subtitle">"Hành trình học hỏi và phát triển trong lĩnh vực DevOps"</p>
+        <h1 className="section-title">{t('about.title')}</h1>
+        <p className="section-subtitle">{t('about.subtitle')}</p>
       </div>
 
       <div className="about-content">
         <div className="about-text">
           <div className="about-section">
-            <h2>Giới thiệu</h2>
-            <p>
-              Tôi là một sinh viên Công nghệ Thông tin với niềm đam mê xây dựng hệ thống hạ tầng hiện đại và tự động hóa quy trình triển khai phần mềm.
-              Tôi đã thực hiện một số dự án cá nhân như hệ thống DevOps cho mô hình IoT 3 tầng (Device – Edge – Cloud) và hạ tầng ảo hóa phục vụ livestream nội bộ.
-            </p>
-            <p>
-              Dù vẫn đang trên con đường học hỏi, tôi luôn chủ động tìm hiểu công nghệ mới, từ containerization, CI/CD cho đến cloud computing,
-              với mục tiêu tạo ra các hệ thống ổn định, bảo mật và dễ mở rộng.
-            </p>
+            <h2>{t('about.intro')}</h2>
+            <p>{t('about.p1')}</p>
+            <p>{t('about.p2')}</p>
           </div>
 
           <div className="about-section">
-            <h2>Giá trị cốt lõi</h2>
+            <h2>{t('about.coreValues')}</h2>
             <div className="values-grid">
               <div className="value-item">
-                <h3>Tự động hóa</h3>
-                <p>Giảm thiểu thao tác thủ công, tăng hiệu suất triển khai</p>
+                <h3>{t('about.v1Title')}</h3>
+                <p>{t('about.v1Desc')}</p>
               </div>
               <div className="value-item">
-                <h3>Độ tin cậy</h3>
-                <p>Xây dựng hệ thống ổn định, dễ giám sát và phục hồi</p>
+                <h3>{t('about.v2Title')}</h3>
+                <p>{t('about.v2Desc')}</p>
               </div>
               <div className="value-item">
-                <h3>Học hỏi</h3>
-                <p>Liên tục nâng cao kỹ năng và khám phá công nghệ mới</p>
+                <h3>{t('about.v3Title')}</h3>
+                <p>{t('about.v3Desc')}</p>
               </div>
               <div className="value-item">
-                <h3>Hợp tác</h3>
-                <p>Làm việc nhóm hiệu quả, phối hợp chặt chẽ với các bộ phận</p>
+                <h3>{t('about.v4Title')}</h3>
+                <p>{t('about.v4Desc')}</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="skills-section">
-          <h2>Kỹ năng & Công nghệ</h2>
+          <h2>{t('about.skills')}</h2>
           <div className="skills-grid">
             {skills.map((skill, index) => (
               <div key={index} className="skill-category">
@@ -73,7 +69,7 @@ const About = () => {
         </div>
 
         <div className="experience-section">
-          <h2>Dự án tiêu biểu</h2>
+          <h2>{t('about.highlightProjects')}</h2>
           <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-marker"></div>

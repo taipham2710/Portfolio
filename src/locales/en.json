@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hello! I am",
+    "role": "DevOps Engineer",
+    "desc": "An IT student focusing on DevOps, looking for an internship to learn Linux, CI/CD, containerization and system deployment to grow into a professional DevOps Engineer.",
+    "viewProjects": "View projects",
+    "downloadCV": "Download CV",
+    "cvVi": "CV Vietnamese",
+    "cvEn": "CV English",
+    "scroll": "Scroll down to explore",
+    "statsProjects": "Completed projects",
+    "statsYears": "Years of experience"
+  },
+  "footer": {
+    "copyright": "© 2025 Portfolio"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "\"The journey of learning and growing in DevOps\"",
+    "intro": "Introduction",
+    "p1": "I am an Information Technology student passionate about building modern infrastructure and automating software delivery. I have built personal projects such as a DevOps system for a 3-layer IoT model (Device – Edge – Cloud) and an internal livestream virtualization stack.",
+    "p2": "While still on my learning path, I proactively explore new technologies from containerization and CI/CD to cloud computing, aiming to create systems that are stable, secure, and scalable.",
+    "coreValues": "Core values",
+    "skills": "Skills & Technologies",
+    "highlightProjects": "Highlighted projects"
+  },
+  "about.v1Title": "Automation",
+  "about.v1Desc": "Reduce manual operations, improve delivery efficiency",
+  "about.v2Title": "Reliability",
+  "about.v2Desc": "Build stable systems that are observable and recoverable",
+  "about.v3Title": "Learning",
+  "about.v3Desc": "Continuously improve skills and explore new tech",
+  "about.v4Title": "Collaboration",
+  "about.v4Desc": "Work effectively in teams, coordinate closely across functions",
+  "projects": {
+    "title": "My projects",
+    "ctaTitle": "Do you have a project to build?",
+    "ctaDesc": "Contact me to discuss your ideas",
+    "ctaBtn": "Contact now",
+    "featured": "Featured",
+    "viewDetails": "View details"
+  },
+  "certs": {
+    "title": "Certificates & Achievements",
+    "subtitle": "Professional certifications and achievements",
+    "all": "All",
+    "devops": "DevOps & Security",
+    "cloud": "Cloud (AWS, Azure, GCP)",
+    "frontend": "Frontend & Backend",
+    "viewCert": "View certificate",
+    "coming": "Coming Soon!",
+    "comingDesc": "No certificates in this category yet. I'm learning and earning more!",
+    "seeProjects": "View projects",
+    "statsTotal": "Certificates",
+    "statsFeatured": "Featured certificates",
+    "statsIssuers": "Issuers"
+  },
+  "contact": {
+    "title": "Contact",
+    "info": "Contact Information",
+    "desc": "I'm always open to new ideas and collaboration opportunities. Reach me via any method below.",
+    "follow": "Follow me",
+    "formTitle": "Send a message",
+    "emailTitle": "Email",
+    "phoneTitle": "Phone",
+    "addressTitle": "Address",
+    "name": "Full name *",
+    "email": "Email *",
+    "subject": "Subject",
+    "message": "Message *",
+    "namePh": "Enter your full name",
+    "emailPh": "Enter your email",
+    "subjectPh": "Enter message subject",
+    "messagePh": "Enter your message",
+    "sending": "Sending...",
+    "send": "Send message",
+    "notConfigured": "EmailJS is not configured. Please add VITE_EMAILJS_PUBLIC_KEY, VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID to .env.local",
+    "sentOk": "Sent successfully!",
+    "sentFail": "Send failed, please try again later.",
+    "sentError": "Cannot send email. Please try again later."
+  }
+}
+
+

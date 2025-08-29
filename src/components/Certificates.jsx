@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaCertificate, FaExternalLinkAlt, FaStar, FaTrophy, FaRocket, FaCloud, FaCode, FaShieldAlt } from 'react-icons/fa'
 
 const Certificates = () => {
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const { t } = useTranslation()
 
   const certificates = [
     {
@@ -30,10 +32,10 @@ const Certificates = () => {
   ]
 
   const categories = [
-    { id: 'all', name: 'Tất cả', icon: FaTrophy, count: certificates.length },
-    { id: 'devops', name: 'DevOps & Security', icon: FaShieldAlt, count: certificates.filter(c => c.category === 'devops').length },
-    { id: 'cloud', name: 'Cloud (AWS, Azure, GCP)', icon: FaCloud, count: 0 },
-    { id: 'frontend', name: 'Frontend & Backend', icon: FaCode, count: 0 },
+    { id: 'all', name: t('certs.all'), icon: FaTrophy, count: certificates.length },
+    { id: 'devops', name: t('certs.devops'), icon: FaShieldAlt, count: certificates.filter(c => c.category === 'devops').length },
+    { id: 'cloud', name: t('certs.cloud'), icon: FaCloud, count: 0 },
+    { id: 'frontend', name: t('certs.frontend'), icon: FaCode, count: 0 },
   ]
 
   const filteredCertificates = selectedCategory === 'all' 
@@ -47,8 +49,8 @@ const Certificates = () => {
   return (
     <div className="certificates">
       <div className="certificates-header">
-        <h1 className="section-title">Chứng chỉ & Thành tích</h1>
-        <p className="section-subtitle">Các chứng nhận chuyên môn và thành tích trong sự nghiệp</p>
+        <h1 className="section-title">{t('certs.title')}</h1>
+        <p className="section-subtitle">{t('certs.subtitle')}</p>
       </div>
 
       {/* Category Filter Buttons */}
@@ -84,7 +86,7 @@ const Certificates = () => {
                         href={cert.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="Xem chứng chỉ"
+                        title={t('certs.viewCert')}
                       >
                         <FaExternalLinkAlt />
                       </a>
@@ -96,7 +98,7 @@ const Certificates = () => {
               <div className="certificate-content">
                 <div className="certificate-header">
                   <h3 className="certificate-title">{cert.title}</h3>
-                  {cert.featured && <span className="featured-badge">Featured</span>}
+                  {cert.featured && <span className="featured-badge">{t('projects.featured')}</span>}
                 </div>
                 <div className="certificate-issuer">{cert.issuer}</div>
                 <div className="certificate-date">{cert.date}</div>
@@ -108,7 +110,7 @@ const Certificates = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Xem chứng chỉ <FaExternalLinkAlt />
+                    {t('certs.viewCert')} <FaExternalLinkAlt />
                   </a>
                 </div>
               </div>
@@ -121,17 +123,17 @@ const Certificates = () => {
             <div className="coming-soon-icon">
               <FaRocket />
             </div>
-            <h2>Coming Soon!</h2>
-            <p>Chưa có chứng chỉ nào trong danh mục này. Tôi đang trong quá trình học tập và tích lũy chứng chỉ chuyên môn!</p>
+            <h2>{t('certs.coming')}</h2>
+            <p>{t('certs.comingDesc')}</p>
             <div className="coming-soon-cta">
-              <p>Bạn muốn xem portfolio dự án của tôi?</p>
+              <p>{t('certs.seeProjects')}</p>
               <a
                 className="btn btn-primary"
                 href="https://github.com/taipham2710/Portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Xem dự án
+                {t('certs.seeProjects')}
               </a>
             </div>
           </div>
@@ -144,21 +146,21 @@ const Certificates = () => {
           <FaTrophy className="stat-icon" />
           <div className="stat-content">
             <h3>{totalCertificates}</h3>
-            <p>Chứng chỉ</p>
+            <p>{t('certs.statsTotal')}</p>
           </div>
         </div>
         <div className="stat-card">
           <FaStar className="stat-icon" />
           <div className="stat-content">
             <h3>{featuredCount}</h3>
-            <p>Chứng chỉ nổi bật</p>
+            <p>{t('certs.statsFeatured')}</p>
           </div>
         </div>
         <div className="stat-card">
           <FaCertificate className="stat-icon" />
           <div className="stat-content">
             <h3>{issuersCount}</h3>
-            <p>Tổ chức cấp</p>
+            <p>{t('certs.statsIssuers')}</p>
           </div>
         </div>
       </div>

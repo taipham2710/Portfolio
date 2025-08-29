@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaHome, FaUser, FaCode, FaCertificate, FaEnvelope, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa'
 
 const Sidebar = ({ currentTab, setCurrentTab, isDarkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { t, i18n } = useTranslation()
 
   const menuItems = [
-    { id: 'home', label: 'Trang chủ', icon: FaHome },
-    { id: 'about', label: 'Giới thiệu', icon: FaUser },
-    { id: 'projects', label: 'Dự án', icon: FaCode },
-    { id: 'certificates', label: 'Chứng chỉ', icon: FaCertificate },
-    { id: 'contact', label: 'Liên hệ', icon: FaEnvelope },
+    { id: 'home', label: t('nav.home'), icon: FaHome },
+    { id: 'about', label: t('nav.about'), icon: FaUser },
+    { id: 'projects', label: t('nav.projects'), icon: FaCode },
+    { id: 'certificates', label: t('nav.certificates'), icon: FaCertificate },
+    { id: 'contact', label: t('nav.contact'), icon: FaEnvelope },
   ]
 
   const handleMobileMenuToggle = () => {
@@ -43,6 +45,14 @@ const Sidebar = ({ currentTab, setCurrentTab, isDarkMode, toggleTheme }) => {
           >
             {isDarkMode ? <FaSun size={20} color="currentColor" /> : <FaMoon size={20} color="currentColor" />}
           </button>
+          <button
+            className="theme-toggle"
+            onClick={() => i18n.changeLanguage(i18n.language === 'vi' ? 'en' : 'vi')}
+            aria-label="Toggle language"
+            style={{ marginLeft: '0.5rem' }}
+          >
+            {i18n.language === 'vi' ? 'EN' : 'VI'}
+          </button>
         </div>
         
         <nav className="sidebar-nav">
@@ -65,7 +75,7 @@ const Sidebar = ({ currentTab, setCurrentTab, isDarkMode, toggleTheme }) => {
         </nav>
         
         <div className="sidebar-footer">
-          <p className="footer-text">© 2025 Portfolio</p>
+          <p className="footer-text">{t('footer.copyright')}</p>
         </div>
       </aside>
 

@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "certificates": "Chứng chỉ",
+    "contact": "Liên hệ"
+  },
+  "home": {
+    "title": "Xin chào! Tôi là",
+    "role": "DevOps Engineer",
+    "desc": "Là một sinh viên CNTT định hướng DevOps, tôi mong muốn có cơ hội thực tập để học hỏi về Linux, CI/CD, containerization, triển khai hệ thống nhằm phát triển thành DevOps Engineer chuyên nghiệp.",
+    "viewProjects": "Xem dự án",
+    "downloadCV": "Tải CV",
+    "cvVi": "CV Tiếng Việt",
+    "cvEn": "CV English",
+    "scroll": "Cuộn xuống để khám phá",
+    "statsProjects": "Dự án hoàn thành",
+    "statsYears": "Năm kinh nghiệm"
+  },
+  "footer": {
+    "copyright": "© 2025 Portfolio"
+  },
+  "about": {
+    "title": "Về tôi",
+    "subtitle": "\"Hành trình học hỏi và phát triển trong lĩnh vực DevOps\"",
+    "intro": "Giới thiệu",
+    "p1": "Tôi là một sinh viên Công nghệ Thông tin với niềm đam mê xây dựng hạ tầng hiện đại và tự động hóa quy trình triển khai phần mềm. Tôi đã thực hiện một số dự án cá nhân như hệ thống DevOps cho mô hình IoT 3 tầng (Device – Edge – Cloud) và hạ tầng ảo hóa phục vụ livestream nội bộ.",
+    "p2": "Dù vẫn đang trên con đường học hỏi, tôi luôn chủ động tìm hiểu công nghệ mới, từ containerization, CI/CD cho đến cloud computing, với mục tiêu tạo ra các hệ thống ổn định, bảo mật và dễ mở rộng.",
+    "coreValues": "Giá trị cốt lõi",
+    "skills": "Kỹ năng & Công nghệ",
+    "highlightProjects": "Dự án tiêu biểu"
+  },
+  "about.v1Title": "Tự động hóa",
+  "about.v1Desc": "Giảm thiểu thao tác thủ công, tăng hiệu suất triển khai",
+  "about.v2Title": "Độ tin cậy",
+  "about.v2Desc": "Xây dựng hệ thống ổn định, dễ giám sát và phục hồi",
+  "about.v3Title": "Học hỏi",
+  "about.v3Desc": "Liên tục nâng cao kỹ năng và khám phá công nghệ mới",
+  "about.v4Title": "Hợp tác",
+  "about.v4Desc": "Làm việc nhóm hiệu quả, phối hợp chặt chẽ với các bộ phận",
+  "projects": {
+    "title": "Dự án của tôi",
+    "ctaTitle": "Bạn có dự án muốn thực hiện?",
+    "ctaDesc": "Hãy liên hệ với tôi để thảo luận về ý tưởng của bạn",
+    "ctaBtn": "Liên hệ ngay",
+    "featured": "Nổi bật",
+    "viewDetails": "Xem chi tiết"
+  },
+  "certs": {
+    "title": "Chứng chỉ & Thành tích",
+    "subtitle": "Các chứng nhận chuyên môn và thành tích trong sự nghiệp",
+    "all": "Tất cả",
+    "devops": "DevOps & Security",
+    "cloud": "Cloud (AWS, Azure, GCP)",
+    "frontend": "Frontend & Backend",
+    "viewCert": "Xem chứng chỉ",
+    "coming": "Coming Soon!",
+    "comingDesc": "Chưa có chứng chỉ nào trong danh mục này. Tôi đang trong quá trình học tập và tích lũy chứng chỉ chuyên môn!",
+    "seeProjects": "Xem dự án",
+    "statsTotal": "Chứng chỉ",
+    "statsFeatured": "Chứng chỉ nổi bật",
+    "statsIssuers": "Tổ chức cấp"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "info": "Thông tin liên lạc",
+    "desc": "Tôi luôn sẵn sàng lắng nghe ý tưởng mới và cơ hội hợp tác. Hãy liên hệ với tôi qua bất kỳ phương thức nào dưới đây.",
+    "follow": "Theo dõi tôi",
+    "formTitle": "Gửi tin nhắn",
+    "emailTitle": "Email",
+    "phoneTitle": "Điện thoại",
+    "addressTitle": "Địa chỉ",
+    "name": "Họ và tên *",
+    "email": "Email *",
+    "subject": "Tiêu đề",
+    "message": "Nội dung tin nhắn *",
+    "namePh": "Nhập họ và tên của bạn",
+    "emailPh": "Nhập email của bạn",
+    "subjectPh": "Nhập tiêu đề tin nhắn",
+    "messagePh": "Nhập nội dung tin nhắn của bạn",
+    "sending": "Đang gửi...",
+    "send": "Gửi tin nhắn",
+    "notConfigured": "Chưa cấu hình EmailJS. Vui lòng thêm VITE_EMAILJS_PUBLIC_KEY, VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID vào .env.local",
+    "sentOk": "Gửi thành công!",
+    "sentFail": "Gửi thất bại, vui lòng thử lại sau.",
+    "sentError": "Không thể gửi email. Vui lòng thử lại sau."
+  }
+}
+
+

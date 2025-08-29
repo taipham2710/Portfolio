@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from 'react-icons/fa'
 
 const Home = ({ onViewProjectsClick }) => {
   const [showCVDropdown, setShowCVDropdown] = useState(false)
   const dropdownRef = useRef(null)
+  const { t } = useTranslation()
 
   const cvOptions = [
     {
@@ -58,27 +60,24 @@ const Home = ({ onViewProjectsClick }) => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Xin chào! Tôi là
+              {t('home.title')}
               <span className="highlight"> Phạm Tấn Tài</span>
             </h1>
             <p className="hero-subtitle">
-              DevOps Engineer
+              {t('home.role')}
             </p>
             <p className="hero-description">
-              Là một sinh viên công nghệ thông tin định hướng theo mảng DevOps, 
-              tôi mong muốn có được cơ hội thực tập trong môi trường thực tế để học
-              hỏi và nâng cao kỹ năng về Linux, CI/CD, containerization, triển khai hệ thống. 
-              Từ đó phát triển thành một DevOps Engineer chuyên nghiệp.
+              {t('home.desc')}
             </p>
             
             <div className="hero-buttons">
-              <button className="btn btn-primary" onClick={onViewProjectsClick}>Xem dự án</button>
+              <button className="btn btn-primary" onClick={onViewProjectsClick}>{t('home.viewProjects')}</button>
               <div className="cv-dropdown" ref={dropdownRef}>
                 <button 
                   className="btn btn-secondary"
                   onClick={() => setShowCVDropdown(!showCVDropdown)}
                 >
-                  Tải CV
+                  {t('home.downloadCV')}
                 </button>
                 {showCVDropdown && (
                   <div className="cv-dropdown-menu">
@@ -88,7 +87,7 @@ const Home = ({ onViewProjectsClick }) => {
                         className="cv-option"
                         onClick={() => handleCVDownload(cv.url, cv.filename)}
                       >
-                        {cv.name}
+                        {index === 0 ? t('home.cvVi') : t('home.cvEn')}
                       </button>
                     ))}
                   </div>
@@ -115,7 +114,7 @@ const Home = ({ onViewProjectsClick }) => {
         
         <div className="scroll-indicator">
           <FaArrowDown className="scroll-icon" />
-          <span>Cuộn xuống để khám phá</span>
+          <span>{t('home.scroll')}</span>
         </div>
       </div>
       
@@ -134,11 +133,11 @@ const Home = ({ onViewProjectsClick }) => {
       <div className="stats-section">
         <div className="stat-item">
           <h3>10+</h3>
-          <p>Dự án hoàn thành</p>
+          <p>{t('home.statsProjects')}</p>
         </div>
         <div className="stat-item">
           <h3>3+</h3>
-          <p>Năm kinh nghiệm</p>
+          <p>{t('home.statsYears')}</p>
         </div>
       </div>
     </div>

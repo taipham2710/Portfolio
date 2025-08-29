@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaGithub, FaExternalLinkAlt, FaEye } from 'react-icons/fa'
 import ProjectModal from './ProjectModal'
 
 const Projects = ({ onContactCtaClick }) => {
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { t } = useTranslation()
 
   const projects = [
     {
@@ -32,13 +34,13 @@ const Projects = ({ onContactCtaClick }) => {
   return (
     <div className="projects">
       <div className="projects-header">
-        <h1 className="section-title">Dự án của tôi</h1>
+        <h1 className="section-title">{t('projects.title')}</h1>
       </div>
 
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className={`project-card ${project.featured ? 'featured' : ''}`}>
-            {project.featured && <div className="featured-badge">Featured</div>}
+            {project.featured && <div className="featured-badge">{t('projects.featured')}</div>}
             
             <div className="project-image">
               <img src={project.image} alt={project.title} />
@@ -50,7 +52,7 @@ const Projects = ({ onContactCtaClick }) => {
                       setSelectedProject(project)
                       setIsModalOpen(true)
                     }}
-                    title="Xem chi tiết"
+                    title={t('projects.viewDetails')}
                   >
                     <FaEye />
                   </button>
@@ -83,9 +85,9 @@ const Projects = ({ onContactCtaClick }) => {
       </div>
 
       <div className="projects-cta">
-        <h2>Bạn có dự án muốn thực hiện?</h2>
-        <p>Hãy liên hệ với tôi để thảo luận về ý tưởng của bạn</p>
-        <button className="btn btn-primary" onClick={onContactCtaClick}>Liên hệ ngay</button>
+        <h2>{t('projects.ctaTitle')}</h2>
+        <p>{t('projects.ctaDesc')}</p>
+        <button className="btn btn-primary" onClick={onContactCtaClick}>{t('projects.ctaBtn')}</button>
       </div>
 
       {/* Project Modal */}

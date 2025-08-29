@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaPaperPlane } from 'react-icons/fa'
 
@@ -15,6 +16,7 @@ const Contact = () => {
     subject: '',
     message: ''
   })
+  const { t } = useTranslation()
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
@@ -33,7 +35,7 @@ const Contact = () => {
     setSuccess('')
 
     if (!useEmailJS) {
-      setError('Chưa cấu hình EmailJS. Vui lòng thêm VITE_EMAILJS_PUBLIC_KEY, VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID vào .env.local')
+      setError(t('contact.notConfigured'))
       return
     }
 
@@ -52,13 +54,13 @@ const Contact = () => {
         EMAILJS_PUBLIC_KEY
       )
       if (res?.status === 200) {
-        setSuccess('Gửi thành công!')
+        setSuccess(t('contact.sentOk'))
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
-        setError('Gửi thất bại, vui lòng thử lại sau.')
+        setError(t('contact.sentFail'))
       }
     } catch (err) {
-      setError('Không thể gửi email. Vui lòng thử lại sau.')
+      setError(t('contact.sentError'))
     } finally {
       setIsSubmitting(false)
     }
@@ -67,20 +69,20 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: FaEnvelope,
-      title: 'Email',
+      titleKey: 'contact.emailTitle',
       value: 'taipham.dev@gmail.com',
       link: 'mailto:taipham.dev@gmail.com'
     },
     {
       icon: FaPhone,
-      title: 'Điện thoại',
+      titleKey: 'contact.phoneTitle',
       value: '+84 703423072',
       link: 'tel:+84703423072'
     },
     {
       icon: FaMapMarkerAlt,
-      title: 'Địa chỉ',
-      value: 'Hồ Chí Minh, Việt Nam',
+      titleKey: 'contact.addressTitle',
+      value: 'Ho Chi Minh City, Vietnam',
       link: null
     }
   ]
@@ -109,15 +111,14 @@ const Contact = () => {
   return (
     <div className="contact">
       <div className="contact-header">
-        <h1 className="section-title">Liên hệ</h1>
+        <h1 className="section-title">{t('contact.title')}</h1>
       </div>
 
       <div className="contact-content">
         <div className="contact-info-section">
-          <h2>Thông tin liên lạc</h2>
+          <h2>{t('contact.info')}</h2>
           <p className="contact-description">
-            Tôi luôn sẵn sàng lắng nghe ý tưởng mới và cơ hội hợp tác. 
-            Hãy liên hệ với tôi qua bất kỳ phương thức nào dưới đây.
+            {t('contact.desc')}
           </p>
           
           <div className="contact-info-list">
@@ -129,7 +130,7 @@ const Contact = () => {
                     <Icon />
                   </div>
                   <div className="contact-details">
-                    <h3>{info.title}</h3>
+                    <h3>{t(info.titleKey)}</h3>
                     {info.link ? (
                       <a href={info.link} className="contact-link">
                         {info.value}
@@ -144,7 +145,7 @@ const Contact = () => {
           </div>
 
           <div className="social-links-section">
-            <h3>Theo dõi tôi</h3>
+            <h3>{t('contact.follow')}</h3>
             <div className="social-links">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon
@@ -167,7 +168,7 @@ const Contact = () => {
         </div>
 
         <div className="contact-form-section">
-          <h2>Gửi tin nhắn</h2>
+          <h2>{t('contact.formTitle')}</h2>
           {error && (
             <div className="form-alert" style={{color: '#dc2626', marginBottom: '1rem'}}>{error}</div>
           )}
@@ -179,7 +180,7 @@ const Contact = () => {
             className="contact-form"
           >
             <div className="form-group">
-              <label htmlFor="name">Họ và tên *</label>
+              <label htmlFor="name">{t('contact.name')}</label>
               <input
                 type="text"
                 id="name"
@@ -187,12 +188,12 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Nhập họ và tên của bạn"
+                placeholder={t('contact.namePh')}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email *</label>
+              <label htmlFor="email">{t('contact.email')}</label>
               <input
                 type="email"
                 id="email"
@@ -200,24 +201,24 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="Nhập email của bạn"
+                placeholder={t('contact.emailPh')}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="subject">Tiêu đề</label>
+              <label htmlFor="subject">{t('contact.subject')}</label>
               <input
                 type="text"
                 id="subject"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                placeholder="Nhập tiêu đề tin nhắn"
+                placeholder={t('contact.subjectPh')}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Nội dung tin nhắn *</label>
+              <label htmlFor="message">{t('contact.message')}</label>
               <textarea
                 id="message"
                 name="message"
@@ -225,7 +226,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="5"
-                placeholder="Nhập nội dung tin nhắn của bạn"
+                placeholder={t('contact.messagePh')}
               ></textarea>
             </div>
 
@@ -237,12 +238,12 @@ const Contact = () => {
               {isSubmitting ? (
                 <>
                   <span className="loading-spinner"></span>
-                  Đang gửi...
+                  {t('contact.sending')}
                 </>
               ) : (
                 <>
                   <FaPaperPlane />
-                  Gửi tin nhắn
+                  {t('contact.send')}
                 </>
               )}
             </button>
