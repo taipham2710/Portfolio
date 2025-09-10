@@ -29,6 +29,17 @@ const Certificates = () => {
       category: 'devops',
       image: '/Portfolio/git-basic-for-devops.png'
     },
+    {
+      id: 'coursera-jenkins-basic-devops',
+      title: 'Jenkins for Beginners',
+      issuer: 'KodeKloud (Coursera)',
+      date: '09/09/2025',
+      descriptionKey: 'certs.jenkinsBeginnerDesc',
+      url: 'https://coursera.org/share/46eddacac8d4bdcdb9935463c2051cfd',
+      featured: false,
+      category: 'devops',
+      image: '/Portfolio/jenkins-basic-for-devops.png'
+    },
   ]
 
   const categories = [

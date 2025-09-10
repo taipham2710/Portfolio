@@ -70,7 +70,8 @@
     "statsFeatured": "Featured certificates",
     "statsIssuers": "Issuers",
     "devopsPrereqDesc": "Completed the foundational DevOps course (~14 hours): Linux, CLI, TCP/IP, Networking, Systems Administration.",
-    "gitBasicsDesc": "Completed the basic Git course for DevOps (~4 hours): Git, GitHub, Version Control, Linux, collaboration tools."
+    "gitBasicsDesc": "Completed the basic Git course for DevOps (~4 hours): Git, GitHub, Version Control, Linux, collaboration tools.",
+    "jenkinsBeginnerDesc": "Completed the Jenkins beginner course for DevOps (~4 hours): CI/CD, Jenkins, Pipelines, Systems Administration."
   },
   "contact": {
     "title": "Contact",
