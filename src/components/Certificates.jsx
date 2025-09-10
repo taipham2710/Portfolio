@@ -40,6 +40,17 @@ const Certificates = () => {
       category: 'devops',
       image: '/Portfolio/jenkins-basic-for-devops.png'
     },
+    {
+      id: 'coursera-docker-basic-devops',
+      title: 'Docker Basics for DevOps',
+      issuer: 'KodeKloud (Coursera)',
+      date: '13/09/2025',
+      descriptionKey: 'certs.dockerBasicsDesc',
+      url: 'https://coursera.org/share/c96023c5cb740448a825b11c0e8d5ed1',
+      featured: false,
+      category: 'devops',
+      image: '/Portfolio/docker-basic-for-devops.png'
+    }
   ]
 
   const categories = [
