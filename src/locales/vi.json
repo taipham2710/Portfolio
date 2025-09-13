@@ -68,7 +68,11 @@
     "seeProjects": "Xem dự án",
     "statsTotal": "Chứng chỉ",
     "statsFeatured": "Chứng chỉ nổi bật",
-    "statsIssuers": "Tổ chức cấp"
+    "statsIssuers": "Tổ chức cấp",
+    "devopsPrereqDesc": "Đã hoàn thành khóa học DevOps cơ bản (~14 giờ): Linux, CLI, TCP/IP, Mạng, Quản trị Hệ thống.",
+    "gitBasicsDesc": "Đã hoàn thành khóa học Git cơ bản cho DevOps (~4 giờ): Git, GitHub, Kiểm soát Phiên bản, Linux.",
+    "jenkinsBeginnerDesc": "Đã hoàn thành khóa học Jenkins dành cho người mới bắt đầu về DevOps (~4 giờ): CI/CD, Jenkins, Pipelines.",
+    "dockerBasicsDesc": "Đã hoàn thành khóa học Docker Cơ bản cho DevOps (~7 giờ): Container hóa, Docker."
   },
   "contact": {
     "title": "Liên hệ",
