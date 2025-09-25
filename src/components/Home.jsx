@@ -100,12 +100,12 @@ const Home = ({ onViewProjectsClick }) => {
             <div className="profile-card">
               <div className="profile-avatar">
                 <img 
-                  src="/Portfolio/avatar.jpeg" 
+                  src="/Portfolio/avatar.JPG" 
                   alt="Phạm Tấn Tài - DevOps Engineer"
                   className="avatar"
                 />
               </div>
-                              <div className="profile-info">
+                  <div className="profile-info">
                   <h3>DevOps Engineer</h3>
                 </div>
             </div>

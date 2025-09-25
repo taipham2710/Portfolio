@@ -442,8 +442,8 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    object-position: center top;
-    transform: scale(1.1);
+    object-position: center center;
+    transform: scale(1.0);
   }
   
   .profile-info h3 {
@@ -2652,8 +2652,8 @@
     }
     
     .avatar-placeholder {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       font-size: 2rem;
     }
     
