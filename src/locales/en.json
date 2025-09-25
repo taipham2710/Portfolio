@@ -72,7 +72,8 @@
     "devopsPrereqDesc": "Completed the foundational DevOps course (~14 hours): Linux, CLI, TCP/IP, Networking, Systems Administration.",
     "gitBasicsDesc": "Completed the basic Git course for DevOps (~4 hours): Git, GitHub, Version Control, Linux.",
     "jenkinsBeginnerDesc": "Completed the Jenkins beginner course for DevOps (~4 hours): CI/CD, Jenkins, Pipelines.",
-    "dockerBasicsDesc": "Completed the Docker Basics for DevOps course (~7 hours): Containerization, Docker."
+    "dockerBasicsDesc": "Completed the Docker Basics for DevOps course (~7 hours): Containerization, Docker.",
+    "kubernetesBasicsDesc": "Completed the Kubernetes Basics for DevOps course (~8 hours): Container Orchestration, Kubernetes."
   },
   "contact": {
     "title": "Contact",
